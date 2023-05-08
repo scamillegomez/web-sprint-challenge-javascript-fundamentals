@@ -16,7 +16,7 @@ function myFunction() {
 //myFunction();
 
 //🚀🚀🚀 ⬇️ 📝 Explanation ⬇️ 📝 🚀🚀🚀: 
-
+//nestedFunction can access the variable internal because it is within the myFunction scope just like the variable internal is.
 
 
 
@@ -30,10 +30,15 @@ function myFunction() {
 💡 NOTE: you may use a for loop for this function if you wish 
 */
 
-function summation(/*Your Code Here*/) {
-  /*Your Code Here*/
-
+function summation(num) {
+  var counter = 0;
+  for(let i = 0; i<= num ; i++){
+    counter = counter + i;
   }
+  return counter;
+  }
+
+  //console.log(summation(4));
  
 
 // 🦁🦁🦁 Topic 2: ADVANCED Array Methods 🦁🦁🦁
@@ -60,11 +65,19 @@ const zooAnimals = [
   💡 NOTE: the array returned should be an array of strings, and each string should follow this pattern: "name: {name}, scientific: {scientific name}"
   */
 
-  function animalNames(/*Your Code Here*/){
-    /*Your Code Here*/
+ 
+  var displayNames = [];
+
+  function animalNames(arr){ 
+    arr.forEach(function(element){
+      //console.log(element);
+      displayNames.push(`name: ${element.animal_name}, scientific: ${element.scientific_name}`);
+    });
+    return displayNames;
   }
   
-
+animalNames(zooAnimals);
+console.log(displayNames);
   /* 🦁🦁🦁 Request 2: .map() 🦁🦁🦁
   The zoo needs a list of all their animal's names converted to lower case. 
   Use lowerCaseNames to do the following:
